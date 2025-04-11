@@ -61,7 +61,7 @@ def gen_insert_sql(data):
     end_date=yyyymmdd_to_date_string_with_time(data.get('sql_argument_value').get('end_date'))
     sql_argument = json.dumps(data.get('sql_argument'))
 
-    sql = f""" INSERT INTO t_submission (submission_id, rule_id, sql_argument, bzb_mission_id, start_date, end_date, create_datetime, modify_datetime, del) VALUES ('{submission_id}', '{rule_id}', '{sql_argument}', '{bzb_mission_id}', '{start_date}', '{end_date}', now(), now(), 0);"""
+    sql = f"""INSERT INTO t_submission (submission_id, rule_id, sql_argument, bzb_mission_id, start_date, end_date, create_datetime, modify_datetime, del) VALUES ('{submission_id}', '{rule_id}', '{sql_argument}', '{bzb_mission_id}', '{start_date}', '{end_date}', now(), now(), 0);"""
     return sql
 
 def processing(data):
